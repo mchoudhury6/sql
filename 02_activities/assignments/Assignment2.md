@@ -48,14 +48,23 @@ There are several tools online you can use, I'd recommend [Draw.io](https://www.
 #### Prompt 2
 We want to create employee shifts, splitting up the day into morning and evening. Add this to the ERD.
 
+---
+#### ERD after Prompt 1 and Prompt 2
+![bookstore ERD](./Diagram1.png)
+---
+
+
 #### Prompt 3
 The store wants to keep customer addresses. Propose two architectures for the CUSTOMER_ADDRESS table, one that will retain changes, and another that will overwrite. Which is type 1, which is type 2? 
 
 **HINT:** search type 1 vs type 2 slowly changing dimensions. 
 
-```
-Your answer...
-```
+![customer addresses](./Diagram2.png)
+
+> [ANSWER]
+>
+> **Type 1 CUSTOMER_ADDRESS** table overwrites a changes to a customer's address, keeping the most recent address and discarding historical information. This approach is more simple when historical address data is not required. The **Type 2 CUSTOMER_ADDRESS** table creates a new record for each address change, keeping the history of all past addresses with `start_date`, `end_date`, and `is_current` fields to track the validity of each address over time.  
+
 
 ***
 
